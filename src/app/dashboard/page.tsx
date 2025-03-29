@@ -4,10 +4,10 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import { useEffect, useState } from 'react';
 import AIListingForm from '../components/AIListingForm';
-
+import type { User } from 'firebase/auth';
 
 export default function DashboardPage() {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState<User | null>(null);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
