@@ -7,7 +7,7 @@ import AIListingForm from '../components/AIListingForm';
 
 
 export default function DashboardPage() {
-    const [user, setUser] = useState<any>(null);
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
